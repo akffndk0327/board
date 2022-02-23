@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 작성 </title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+<form id="bbs_form">
+    <div class="container-sm">
+        <div class="mb-3">
+            <label for="id" class="form-label">작성자</label>
+            <input type="text" class="form-control" id="id" name="id">
+        </div>
+
+        <div class="mb-3">
+            <label for="title" class="form-label">제목</label>
+            <input type="text" class="form-control" id="title" name="title">
+        </div>
+
+        <div class="mb-3">
+            <label for="context" class="form-label">내용</label>
+            <textarea class="form-control" id="context" rows="3" name="context"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary" id="save">등록</button>
+        <button type="reset" class="btn btn-danger" id="cancle">취소</button>
+    </div>
+</form>
+
+</body>
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="moment.js"></script>
+<script type="text/javascript" src="custom.js"></script>
+</html>
