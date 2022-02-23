@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+</head>
+<body>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">상세보기</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <div class="mailbox-read-info">
+                            제목 : <span th:text="${view.get().title}" /> <br>
+                            작성자 : <span th:text="${view.get().id}"/><br>
+                            작성시간 : <span th:text="${view.get().time}"/><br>
+                        </div>
+
+<!--                        내용-->
+                        <h6>내용</h6>
+                        <div class="mailbox-read-message" th:text="${view.get().context}"></div>
+                        <!-- /.mailbox-read-message -->
+                    </div>
+                    <!-- /.card-body -->
+                   </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+<!-- AdminLTE App -->
+<script type="text/javascript" src="/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script type="text/javascript" src="/dist/js/demo.js"></script>
+<script type="text/javascript" src="moment.js"></script>
+<script type="text/javascript" src="custom.js"></script>
+</html>

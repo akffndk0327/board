@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>첫 화면</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
 </head>
 
 <body>
@@ -28,12 +37,63 @@
         </tr>
         </tbody>
     </table>
+    <hr>
     <button type="button" class="btn btn-primary" id="bbswrite">게시글 작성하기</button>
-</div>
+    <hr>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">글 목록</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <div class="table-responsive mailbox-messages">
+                            <table class="table table-hover table-striped" id="bbsTable">
+                                <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">작성자</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">내용</th>
+                                    <th scope="col">작성시간</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="board : ${boardRepo}">
+                                    <td><div class="icheck-primary"><input type="checkbox" value="" id="check1"><label for="check1"></label></div></td>
+                                    <th th:text="${board.index}" id="index" ></th>
+                                    <td th:text="${board.id}"></td>
+                                    <td class="mailbox-name" >
+                                        <a href="bbsView?index=" th:attrappend="href=${board.index}" th:text="${board.title}" id="bbsId" />
+                                    </td>
+                                    <td class="mailbox-subject" th:text="${board.context}"></td>
+                                    <td class="mailbox-date" th:text="${#dates.format(board.time, 'YY-MM-DD HH:mm')}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <!-- /.table -->
+                        </div>
+                        <!-- /.mail-box-messages -->
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+        </div>
+
+    </section>
 
 </body>
 <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+<!-- AdminLTE App -->
+<script type="text/javascript" src="/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script type="text/javascript" src="/dist/js/demo.js"></script>
 <script type="text/javascript" src="moment.js"></script>
 <script type="text/javascript" src="custom.js"></script>
 
